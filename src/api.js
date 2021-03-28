@@ -5,6 +5,13 @@ const getPrice = async (ticker) => {
   return data.USD;
 };
 
+const getCoinList = async () => {
+  const f = await fetch('https://min-api.cryptocompare.com/data/all/coinlist?summary=true');
+
+  return await f.json();
+};
+
 export default {
   getPrice,
+  getCoinList,
 };
